@@ -64,7 +64,7 @@ router.get('/between/:start_year/:end_year', (req, res) => {
  * Update by movie_id
  */
 router.put('/:movie_id', (req, res, next) => {
-  const promise = Movie.findOneAndUpdate(
+  const promise = Movie.findByIdAndUpdate(
     req.params.movie_id, 
     req.body,
     {
