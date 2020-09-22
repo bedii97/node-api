@@ -56,8 +56,8 @@ router.post('/authenticate', (req, res) => {
           const payload = {
             username
           };
-          const token = jwt.sign(payload, req.app.get('api_secret_key'), {
-            expiresIn: 720 //12 Saat //Dakika cinsinden
+          const token = jwt.sign(payload, req.app.get('api_secret_key')/*Global değişkenden secret key çekiyoruz*/, {
+            expiresIn: 720 //Token süresi dakika cinsinden (12 saat)
           });
 
           res.json({
