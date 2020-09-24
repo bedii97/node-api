@@ -3,8 +3,10 @@ const jwt = require('jsonwebtoken');
 module.exports = (req, res, next) =>{
     //Token'ın elde edilebileceği yollar
     const token = 
-    req.headers['x-access-token'] //Headers altından alınabilir || 
-    req.body.token //Body altından alınabilir || 
+    req.headers['x-access-token'] //Headers altından alınabilir
+    || 
+    req.body.token //Body altından alınabilir
+    || 
     req.query.token; //Query olarak alınabilir; localhost:3000/api/movies?token=asdasfsfdsf
 
     if(token){
